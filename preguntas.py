@@ -9,6 +9,8 @@ import numpy as np
 import pandas as pd
 
 
+
+
 def pregunta_01():
     """
     En este punto se realiza la lectura de conjuntos de datos.
@@ -16,7 +18,6 @@ def pregunta_01():
     """
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
     df = pd.read_csv("gm_2008_region.csv", sep=",", header=0, )
-
     # Asigne la columna "life" a `y` y la columna "fertility" a `X`
     y = df["life"]
     X = df["fertility"]
@@ -38,6 +39,10 @@ def pregunta_01():
 
     # Imprima las nuevas dimensiones de `X`
     print(X_reshaped.shape)
+    
+    
+    
+    
 
 
 def pregunta_02():
@@ -46,9 +51,10 @@ def pregunta_02():
     Complete el código presentado a continuación.
     """
 
-     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
-    df = pd.read_csv("gm_2008_region.csv", sep=",", header=0, )
+    # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
+    df= pd.read_csv("gm_2008_region.csv", sep=",", header=0, )
 
+    
     # Imprima las dimensiones del DataFrame
     print(df.shape)
 
@@ -64,6 +70,11 @@ def pregunta_02():
     # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
     print(df["GDP"].corr(df["life"]).round(4))
 
+    
+    
+    
+    
+    
 def pregunta_03():
     """
     Entrenamiento del modelo sobre todo el conjunto de datos.
@@ -73,6 +84,7 @@ def pregunta_03():
     # Lea el archivo `gm_2008_region.csv` y asignelo al DataFrame `df`
     df = pd.read_csv("gm_2008_region.csv", sep=",", header=0, )
 
+    
     # Asigne a la variable los valores de la columna `fertility`
     X_fertility = df["fertility"].values.reshape(-1,1)
 
@@ -87,10 +99,7 @@ def pregunta_03():
 
     # Cree El espacio de predicción. Esto es, use linspace para crear
     # un vector con valores entre el máximo y el mínimo de X_fertility
-    prediction_space = np.linspace(
-        X_fertility.min(),
-        X_fertility.max(),
-    ).reshape(-1,1)
+    prediction_space = np.linspace(X_fertility.min(),X_fertility.max(),).reshape(-1,1)
 
 
     # Entrene el modelo usando X_fertility y y_life
