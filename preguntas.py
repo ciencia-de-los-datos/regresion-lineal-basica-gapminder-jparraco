@@ -6,7 +6,8 @@ Regresión Lineal Univariada
 En este laboratio se construirá un modelo de regresión lineal univariado.
 
 """
-
+import numpy as np
+import pandas as pd
 
 
 def pregunta_01():
@@ -42,11 +43,9 @@ def pregunta_01():
 
     # Imprima las nuevas dimensiones de `X`
     print(X_reshaped.shape)
+        
     
     
-    
-    
-
 
 def pregunta_02():
     """
